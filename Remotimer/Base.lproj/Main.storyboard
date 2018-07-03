@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYc-ss-zGp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="Remotimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REMOTIMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hit-lc-tLA">
+                                <rect key="frame" x="56" y="45" width="262" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-zd-zfg">
+                                <rect key="frame" x="52" y="557" width="270" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HA6-S0-D4T"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="nQa-7S-UWT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="Controller Mode">
+                                    <color key="titleColor" red="0.062745098039215685" green="0.12549019607843137" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hYK-JR-B28" kind="show" id="Pw7-Wn-Fb8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-j9-5Ox">
+                                <rect key="frame" x="16" y="129" width="343" height="332"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Remotimer is stopwatch application which controlled by remotly.
+
+Under local network, same WiFi, controller and timer are connected each other automatically.
+
+Without controller, not connected or disconnected, timer runs standalone mode. If controller connected again, it works naturally. Awsome!
+
+■ Useful
+1. Presentation timer
+2. Commicate with operator and presenter
+
+■ Controls
+1. Set time
+2. Start/Pause/Resume/Stop/Reset
+3. Add/Sub time while running
+4. Send banner message
+
+✓ One more Thing
+This is opensource project : 
+https://github.com/iamchiwon/remotimer</mutableString>
+                                <color key="textColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-cG-fm6">
+                                <rect key="frame" x="52" y="491" width="270" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1ir-gD-xIv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="wGg-N7-kB9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="Timer Mode">
+                                    <color key="titleColor" red="0.062745098039215685" green="0.12549019607843137" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7HY-2G-CtJ" kind="show" id="aDK-Ds-8f1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.039215686274509803" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W4u-cG-fm6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2vA-xK-xwd"/>
+                            <constraint firstItem="iFE-zd-zfg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8dW-Es-1Gm"/>
+                            <constraint firstItem="Hit-lc-tLA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RoG-sF-IF5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iFE-zd-zfg" secondAttribute="bottom" constant="60" id="YEo-CJ-1aB"/>
+                            <constraint firstItem="W4u-cG-fm6" firstAttribute="top" secondItem="SwY-j9-5Ox" secondAttribute="bottom" constant="30" id="bRr-TI-wkv"/>
+                            <constraint firstItem="SwY-j9-5Ox" firstAttribute="top" secondItem="Hit-lc-tLA" secondAttribute="bottom" constant="30" id="fwS-RZ-RHL"/>
+                            <constraint firstItem="iFE-zd-zfg" firstAttribute="top" secondItem="W4u-cG-fm6" secondAttribute="bottom" constant="16" id="gWi-2O-cLb"/>
+                            <constraint firstItem="SwY-j9-5Ox" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="j4Z-TI-Pry"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SwY-j9-5Ox" secondAttribute="trailing" constant="16" id="y1f-mR-4xj"/>
+                            <constraint firstItem="Hit-lc-tLA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="zW2-ir-oOa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DLH-AC-Agb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="32"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="FC8-wb-4WS">
+            <objects>
+                <viewController id="7HY-2G-CtJ" customClass="TimerViewController" customModule="Remotimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDo-L0-N40">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQy-BS-icz">
+                                <rect key="frame" x="16" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="23a-w8-iYJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="KxV-u4-bsX"/>
+                                </constraints>
+                                <color key="tintColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="oBg-Ah-wyP" kind="unwind" unwindAction="mainRewindSegueWithSegue:" id="v7L-iD-cMJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.039215686274509803" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CQy-BS-icz" firstAttribute="leading" secondItem="A6Y-qk-iu3" secondAttribute="leading" constant="16" id="AhB-hk-qTF"/>
+                            <constraint firstItem="CQy-BS-icz" firstAttribute="top" secondItem="A6Y-qk-iu3" secondAttribute="top" id="QMf-8a-UZe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A6Y-qk-iu3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34F-Yz-5MV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oBg-Ah-wyP" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="820"/>
+        </scene>
+        <!--Controller View Controller-->
+        <scene sceneID="tjz-2v-Ijf">
+            <objects>
+                <viewController id="hYK-JR-B28" customClass="ControllerViewController" customModule="Remotimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2l-jm-8Oq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6c-hx-cUP">
+                                <rect key="frame" x="16" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="2K6-hs-nbw"/>
+                                    <constraint firstAttribute="height" constant="40" id="WcU-Ym-R0S"/>
+                                </constraints>
+                                <color key="tintColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="5gQ-Sc-dQR" kind="unwind" unwindAction="mainRewindSegueWithSegue:" id="xGa-Ec-pcO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.039215686274509803" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v6c-hx-cUP" firstAttribute="leading" secondItem="EwK-0H-ejo" secondAttribute="leading" constant="16" id="Cqk-ub-kXY"/>
+                            <constraint firstItem="v6c-hx-cUP" firstAttribute="top" secondItem="EwK-0H-ejo" secondAttribute="top" id="FHK-Td-DOo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EwK-0H-ejo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89L-c6-t2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5gQ-Sc-dQR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="820"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pKC-ZE-PTf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" navigationBarHidden="YES" id="QYc-ss-zGp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zdn-dB-zsS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sX1-Mg-rXu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgD-hV-USZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-799" y="32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+    </resources>
+</document>
