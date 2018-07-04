@@ -10,7 +10,8 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    override var prefersStatusBarHidden: Bool { return true }
+    
     @IBAction func mainRewindSegue(segue: UIStoryboardSegue) {
-        //nothing
     }
 }

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5126656279D9894CBDD0D5D9 /* Pods_Remotimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E9AEF24F96ED359DF0F9A2 /* Pods_Remotimer.framework */; };
+		A1D6DDF720ED17BF0003466A /* RemotimerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDF620ED17BE0003466A /* RemotimerMessage.swift */; };
+		A1D6DDF920ED18190003466A /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDF820ED18190003466A /* ClientService.swift */; };
+		A1D6DDFB20ED18250003466A /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDFA20ED18250003466A /* ServerService.swift */; };
+		A1D6DDFE20ED1D180003466A /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDFD20ED1D180003466A /* TimerViewModel.swift */; };
+		A1D6DE0020ED1D230003466A /* ControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDFF20ED1D230003466A /* ControllerViewModel.swift */; };
+		A1D6DE0320ED1DB90003466A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DE0220ED1DB90003466A /* Functions.swift */; };
+		A1D6DE0520ED1DC30003466A /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DE0420ED1DC30003466A /* Globals.swift */; };
+		A1D6DE0720ED289C0003466A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DE0620ED289C0003466A /* Extensions.swift */; };
 		A1E45B2620EB65B6007B1338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E45B2520EB65B6007B1338 /* AppDelegate.swift */; };
 		A1E45B2B20EB65B6007B1338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E45B2920EB65B6007B1338 /* Main.storyboard */; };
 		A1E45B3020EB65B8007B1338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E45B2E20EB65B8007B1338 /* LaunchScreen.storyboard */; };
@@ -20,6 +28,14 @@
 /* Begin PBXFileReference section */
 		0258D443280561E246885A92 /* Pods-Remotimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remotimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remotimer/Pods-Remotimer.debug.xcconfig"; sourceTree = "<group>"; };
 		31E9AEF24F96ED359DF0F9A2 /* Pods_Remotimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remotimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D6DDF620ED17BE0003466A /* RemotimerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotimerMessage.swift; sourceTree = "<group>"; };
+		A1D6DDF820ED18190003466A /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		A1D6DDFA20ED18250003466A /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		A1D6DDFD20ED1D180003466A /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		A1D6DDFF20ED1D230003466A /* ControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModel.swift; sourceTree = "<group>"; };
+		A1D6DE0220ED1DB90003466A /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A1D6DE0420ED1DC30003466A /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		A1D6DE0620ED289C0003466A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A1E45B2220EB65B6007B1338 /* Remotimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remotimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E45B2520EB65B6007B1338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1E45B2A20EB65B6007B1338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +77,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A1D6DDF520ED17850003466A /* RemoteService */ = {
+			isa = PBXGroup;
+			children = (
+				A1D6DDF620ED17BE0003466A /* RemotimerMessage.swift */,
+				A1D6DDF820ED18190003466A /* ClientService.swift */,
+				A1D6DDFA20ED18250003466A /* ServerService.swift */,
+			);
+			path = RemoteService;
+			sourceTree = "<group>";
+		};
+		A1D6DDFC20ED1D000003466A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1D6DDFD20ED1D180003466A /* TimerViewModel.swift */,
+				A1D6DDFF20ED1D230003466A /* ControllerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1D6DE0120ED1D870003466A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A1D6DE0420ED1DC30003466A /* Globals.swift */,
+				A1D6DE0220ED1DB90003466A /* Functions.swift */,
+				A1D6DE0620ED289C0003466A /* Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A1E45B1920EB65B5007B1338 = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +127,10 @@
 		A1E45B2420EB65B6007B1338 /* Remotimer */ = {
 			isa = PBXGroup;
 			children = (
+				A1D6DE0120ED1D870003466A /* Common */,
+				A1D6DDF520ED17850003466A /* RemoteService */,
 				A1E45B3920EB6B26007B1338 /* ViewControllers */,
+				A1D6DDFC20ED1D000003466A /* ViewModel */,
 				A1E45B2520EB65B6007B1338 /* AppDelegate.swift */,
 				A1E45B2920EB65B6007B1338 /* Main.storyboard */,
 				A1E45B2E20EB65B8007B1338 /* LaunchScreen.storyboard */,
@@ -180,11 +228,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Remotimer/Pods-Remotimer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Tibei/Tibei.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tibei.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -217,6 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E45B3F20EB7584007B1338 /* ControllerViewController.swift in Sources */,
+				A1D6DDF720ED17BF0003466A /* RemotimerMessage.swift in Sources */,
+				A1D6DDFB20ED18250003466A /* ServerService.swift in Sources */,
+				A1D6DE0320ED1DB90003466A /* Functions.swift in Sources */,
+				A1D6DDF920ED18190003466A /* ClientService.swift in Sources */,
+				A1D6DE0520ED1DC30003466A /* Globals.swift in Sources */,
+				A1D6DDFE20ED1D180003466A /* TimerViewModel.swift in Sources */,
+				A1D6DE0720ED289C0003466A /* Extensions.swift in Sources */,
+				A1D6DE0020ED1D230003466A /* ControllerViewModel.swift in Sources */,
 				A1E45B3B20EB6FE7007B1338 /* MainMenuViewController.swift in Sources */,
 				A1E45B3D20EB756C007B1338 /* TimerViewController.swift in Sources */,
 				A1E45B2620EB65B6007B1338 /* AppDelegate.swift in Sources */,
