@@ -67,9 +67,7 @@ class TimerViewController: UIViewController {
         let add10 = btnAdd10.rx.tapped().map({ _ in 10 })
         let add30 = btnAdd30.rx.tapped().map({ _ in 30 })
         Driver.merge([sub30, sub10, sub5, add5, add10, add30])
-            .drive(onNext: { [unowned self] time in
-                self.viewModel.updateTime(time)
-            })
+            .drive(onNext: { [unowned self] in self.viewModel.updateTime($0) })
             .disposed(by: disposeBag)
 
         viewModel.serverMessage

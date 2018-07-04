@@ -45,9 +45,7 @@ class ControllerViewController: UIViewController {
 
     private func bindAction() {
         view.rx.tapped()
-            .drive(onNext: { [unowned self] _ in
-                self.view.endEditing(true)
-            })
+            .drive(onNext: { [unowned self] _ in self.view.endEditing(true) })
             .disposed(by: disposeBag)
 
         sendButton.rx.tap.asDriver()
@@ -57,9 +55,7 @@ class ControllerViewController: UIViewController {
 
         clearButton.rx.tap.asDriver()
             .map({ _ in "" })
-            .do(onNext: { [unowned self] emptyText in
-                self.messageField.text = emptyText
-            })
+            .do(onNext: { [unowned self] in self.messageField.text = $0 })
             .drive(onNext: viewModel.sendMessage)
             .disposed(by: disposeBag)
     }
