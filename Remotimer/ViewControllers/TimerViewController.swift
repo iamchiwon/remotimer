@@ -35,6 +35,13 @@ class TimerViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool { return true }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .all }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sliderView.gestureRecognizers?.forEach({ g in
+            sliderView.removeGestureRecognizer(g)
+        })
+    }
 
     private func initUI() {
         connectConditionView.layer.cornerRadius = 10
@@ -71,6 +78,13 @@ class TimerViewController: UIViewController {
         viewModel.connected
             .bind(to: controlsStackView.rx.isHidden)
             .disposed(by: disposeBag)
+
+        viewModel.serverMessage
+            .subscribe(onNext: { [unowned self] text in
+                self.messageLabel.text = text
+                self.messageLabel.isHidden = text.isEmpty
+            })
+            .disposed(by: disposeBag)
     }
 
     private func bindAction() {
@@ -96,7 +110,7 @@ class TimerViewController: UIViewController {
             sender.setTranslation(CGPoint.zero, in: sender.view)
         }
         lastPanningVelocityX = velX
-        
+
         let width = sender.view?.bounds.width ?? 1
         let mins: CGFloat = UIDevice.current.orientation.isLandscape ? 10 : 5
         let mov = mins * location.x / width //5/10 minute per full slide

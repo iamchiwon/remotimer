@@ -25,12 +25,25 @@ class TimerViewModel {
         clientService.connectService(serviceName: RemotimerServiceName)
         clientService.disposed(by: disposeBag)
 
-        clientService.connected.bind(to: connected).disposed(by: disposeBag)
-        clientService.messages.subscribe(onNext: handleMessage).disposed(by: disposeBag)
+        clientService.connected
+            .bind(to: connected)
+            .disposed(by: disposeBag)
 
-        //reset when connected : controlled by server
-        connected.distinctUntilChanged().filter(bypass)
-            .subscribe(onNext: reset).disposed(by: disposeBag)
+        clientService.messages
+            .subscribe(onNext: { [weak self] msg in
+                guard let `self` = self else { return }
+                self.handleMessage(msg)
+            })
+            .disposed(by: disposeBag)
+
+        connected
+            .distinctUntilChanged()
+            .filter(bypass)
+            .subscribe(onNext: { [weak self] x in
+                guard let `self` = self else { return }
+                self.reset(sender: x)
+            })
+            .disposed(by: disposeBag)
 
         timerStarted
             .distinctUntilChanged()
