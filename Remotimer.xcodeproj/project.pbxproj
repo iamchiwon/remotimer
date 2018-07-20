@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5126656279D9894CBDD0D5D9 /* Pods_Remotimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E9AEF24F96ED359DF0F9A2 /* Pods_Remotimer.framework */; };
+		A15D72152101A87A00D204F1 /* UIWheelGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D72142101A87A00D204F1 /* UIWheelGestureRecognizer.swift */; };
+		A15D72172101D5F300D204F1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D72162101D5F300D204F1 /* NavigationViewController.swift */; };
 		A1D6DDF720ED17BF0003466A /* RemotimerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDF620ED17BE0003466A /* RemotimerMessage.swift */; };
 		A1D6DDF920ED18190003466A /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDF820ED18190003466A /* ClientService.swift */; };
 		A1D6DDFB20ED18250003466A /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6DDFA20ED18250003466A /* ServerService.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		0258D443280561E246885A92 /* Pods-Remotimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remotimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remotimer/Pods-Remotimer.debug.xcconfig"; sourceTree = "<group>"; };
 		31E9AEF24F96ED359DF0F9A2 /* Pods_Remotimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remotimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A15D72142101A87A00D204F1 /* UIWheelGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWheelGestureRecognizer.swift; sourceTree = "<group>"; };
+		A15D72162101D5F300D204F1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A1D6DDF620ED17BE0003466A /* RemotimerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotimerMessage.swift; sourceTree = "<group>"; };
 		A1D6DDF820ED18190003466A /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		A1D6DDFA20ED18250003466A /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				A1D6DE0420ED1DC30003466A /* Globals.swift */,
 				A1D6DE0220ED1DB90003466A /* Functions.swift */,
 				A1D6DE0620ED289C0003466A /* Extensions.swift */,
+				A15D72142101A87A00D204F1 /* UIWheelGestureRecognizer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		A1E45B3920EB6B26007B1338 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A15D72162101D5F300D204F1 /* NavigationViewController.swift */,
 				A1E45B3A20EB6FE7007B1338 /* MainMenuViewController.swift */,
 				A1E45B3C20EB756C007B1338 /* TimerViewController.swift */,
 				A1E45B3E20EB7584007B1338 /* ControllerViewController.swift */,
@@ -280,6 +286,8 @@
 				A1E45B3B20EB6FE7007B1338 /* MainMenuViewController.swift in Sources */,
 				A1E45B3D20EB756C007B1338 /* TimerViewController.swift in Sources */,
 				A1E45B2620EB65B6007B1338 /* AppDelegate.swift in Sources */,
+				A15D72172101D5F300D204F1 /* NavigationViewController.swift in Sources */,
+				A15D72152101A87A00D204F1 /* UIWheelGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +435,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6C8BWW65M;
 				INFOPLIST_FILE = Remotimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamchiwon.app.Remotimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -443,7 +454,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6C8BWW65M;
 				INFOPLIST_FILE = Remotimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamchiwon.app.Remotimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

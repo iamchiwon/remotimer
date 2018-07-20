@@ -17,13 +17,10 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var connectConditionLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var controlsStackView: UIStackView!
-    @IBOutlet weak var btnSub30: UIImageView!
-    @IBOutlet weak var btnSub10: UIImageView!
-    @IBOutlet weak var btnSub5: UIImageView!
-    @IBOutlet weak var btnAdd5: UIImageView!
-    @IBOutlet weak var btnAdd10: UIImageView!
-    @IBOutlet weak var btnAdd30: UIImageView!
-    @IBOutlet weak var btnAction: UIImageView!
+    @IBOutlet weak var btnReset: UIButton!
+    @IBOutlet weak var btnStartPause: UIButton!
+    @IBOutlet weak var btnStop: UIButton!
+    @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
 
     let viewModel = TimerViewModel()
@@ -31,15 +28,25 @@ class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        connectConditionView.layer.cornerRadius = 10
-        messageLabel.isHidden = true
-
+        initUI()
         bindUI()
         bindAction()
     }
 
     override var prefersStatusBarHidden: Bool { return true }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .all }
+
+    private func initUI() {
+        connectConditionView.layer.cornerRadius = 10
+        messageLabel.isHidden = true
+
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.maximumNumberOfTouches = 1
+        sliderView.addGestureRecognizer(panGesture)
+        panGesture.rx.event.asDriver()
+            .drive(onNext: handlePanGesture)
+            .disposed(by: disposeBag)
+    }
 
     private func bindUI() {
         viewModel.connected.map { $0 ? #colorLiteral(red: 0.4862745098, green: 0.7019607843, blue: 0.2588235294, alpha: 1): #colorLiteral(red: 0.8470588235, green: 0.262745098, blue: 0.08235294118, alpha: 1) }
@@ -50,8 +57,15 @@ class TimerViewController: UIViewController {
             .bind(to: connectConditionLabel.rx.text)
             .disposed(by: disposeBag)
 
-        viewModel.timer.map(viewModel.timeToString)
+        viewModel.timer.map(timeToString)
             .bind(to: timerLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.timerStarted
+            .map({ $0 ? "PAUSE" : "START" })
+            .subscribe(onNext: { [unowned self] title in
+                self.btnStartPause.setTitle(title, for: .normal)
+            })
             .disposed(by: disposeBag)
 
         viewModel.connected
@@ -60,21 +74,32 @@ class TimerViewController: UIViewController {
     }
 
     private func bindAction() {
-        let sub30 = btnSub30.rx.tapped().map({ _ in -30 })
-        let sub10 = btnSub10.rx.tapped().map({ _ in -10 })
-        let sub5 = btnSub5.rx.tapped().map({ _ in -5 })
-        let add5 = btnAdd5.rx.tapped().map({ _ in 5 })
-        let add10 = btnAdd10.rx.tapped().map({ _ in 10 })
-        let add30 = btnAdd30.rx.tapped().map({ _ in 30 })
-        Driver.merge([sub30, sub10, sub5, add5, add10, add30])
-            .drive(onNext: { [unowned self] in self.viewModel.updateTime($0) })
+        btnReset.rx.tap.asDriver()
+            .drive(onNext: viewModel.reset)
             .disposed(by: disposeBag)
 
-        viewModel.serverMessage
-            .subscribe(onNext: { [unowned self] text in
-                self.messageLabel.text = text
-                self.messageLabel.isHidden = text.isEmpty
-            })
+        btnStartPause.rx.tap.asDriver()
+            .drive(onNext: viewModel.startPause)
             .disposed(by: disposeBag)
+
+        btnStop.rx.tap.asDriver()
+            .drive(onNext: viewModel.stop)
+            .disposed(by: disposeBag)
+    }
+
+    private var lastPanningVelocityX: CGFloat = 0
+
+    private func handlePanGesture(sender: UIPanGestureRecognizer) {
+        let location = sender.translation(in: sender.view)
+        let velX = sender.velocity(in: sender.view).x
+        if sign(velX) != sign(lastPanningVelocityX) {
+            sender.setTranslation(CGPoint.zero, in: sender.view)
+        }
+        lastPanningVelocityX = velX
+        
+        let width = sender.view?.bounds.width ?? 1
+        let mins: CGFloat = UIDevice.current.orientation.isLandscape ? 10 : 5
+        let mov = mins * location.x / width //5/10 minute per full slide
+        viewModel.moveTimer(TimeInterval(mov))
     }
 }
