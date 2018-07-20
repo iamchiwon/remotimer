@@ -43,6 +43,11 @@ class ControllerViewController: UIViewController {
         super.viewDidLayoutSubviews()
         setupUI()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        wheelGestureRecognizer.setHandler(handler: nil)
+    }
 
     private func initUI() {
         sliderOuterView.addGestureRecognizer(wheelGestureRecognizer)

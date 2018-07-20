@@ -31,7 +31,7 @@ class UIWheelGestureRecognizer: UIGestureRecognizer {
 
     private var eventHandler: UIWheelGestureRecognizerDelegate? = nil
 
-    func setHandler(handler: @escaping UIWheelGestureRecognizerDelegate) {
+    func setHandler(handler: UIWheelGestureRecognizerDelegate?) {
         eventHandler = handler
     }
 
