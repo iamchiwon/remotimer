@@ -1,3 +1,4 @@
+![icon](doc_res/icon.png)
 # REMOTIMER
 
 Remotimer is stopwatch application which controlled by remotly.
@@ -17,6 +18,16 @@ Remotimer is stopwatch application which controlled by remotly.
 2. Start/Pause/Resume/Stop/Reset
 3. Add/Sub time while running
 4. Send banner message
+
+### Screenshots
+
+![s01](doc_res/0x0ss.jpg)
+![s01](doc_res/0x0ss-2.jpg)
+![s01](doc_res/0x0ss-1.jpg)
+
+### Appstore
+
+[![Download](https://developer.apple.com/assets/elements/icons/download-on-the-app-store/download-on-the-app-store.svg)](https://itunes.apple.com/us/app/apple-store/id1414871964)
 
 ### One more Thing
 
