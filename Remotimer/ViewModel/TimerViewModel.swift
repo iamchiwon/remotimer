@@ -52,6 +52,8 @@ class TimerViewModel {
                 started ? self.startTimer() : self.stopTimer()
             })
             .disposed(by: disposeBag)
+        
+        setupImpactFeedback()
     }
 
     func handleMessage(_ message: RemotimerMessage) {
@@ -127,5 +129,32 @@ class TimerViewModel {
     private func stopTimer() {
         if let t = internalTimer { t.invalidate() }
         internalTimer = nil
+    }
+    
+    //
+    // Haptic Feedback
+    //
+    
+    private let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    
+    private func setupImpactFeedback() {
+        // Prepare impact feedbacks
+        mediumImpact.prepare()
+        
+        // Impact on minutes changed
+        timer
+            .withLatestFrom(timerStarted, resultSelector: { $1 ? nil : $0 }) // Pass when timer stopped
+            .filterNil()
+            .map({ timeToMinute($0) })
+            .distinctUntilChanged()
+            .skip(1) // Skip first init
+            .subscribe(onNext: { [weak self] _ in
+                self?.impactMediumFeedback()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func impactMediumFeedback() {
+        mediumImpact.impactOccurred()
     }
 }
