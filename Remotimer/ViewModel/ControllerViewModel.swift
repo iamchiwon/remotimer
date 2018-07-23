@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxOptional
 import Tibei
 
 class ControllerViewModel {
@@ -37,8 +38,10 @@ class ControllerViewModel {
                 started ? self.startTimer() : self.stopTimer()
             })
             .disposed(by: disposeBag)
+        
+        setupImpactFeedback()
     }
-
+    
     func sendMessage(_ msg: String) {
         if msg.isEmpty {
             let command = RemotimerMessage(command: "clear")
@@ -108,5 +111,32 @@ class ControllerViewModel {
     private func stopTimer() {
         if let t = internalTimer { t.invalidate() }
         internalTimer = nil
+    }
+    
+    //
+    // Haptic Feedback
+    //
+    
+    private let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    
+    private func setupImpactFeedback() {
+        // Prepare impact feedbacks
+        mediumImpact.prepare()
+        
+        // Impact on minutes changed
+        timer
+            .withLatestFrom(timerStarted, resultSelector: { $1 ? nil : $0 }) // Pass when timer stopped
+            .filterNil()
+            .map({ timeToMinute($0) })
+            .distinctUntilChanged()
+            .skip(1) // Skip first init
+            .subscribe(onNext: { [weak self] _ in
+                self?.impactMediumFeedback()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func impactMediumFeedback() {
+        mediumImpact.impactOccurred()
     }
 }
