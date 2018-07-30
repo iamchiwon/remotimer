@@ -146,6 +146,8 @@ class TimerViewModel {
             .withLatestFrom(timerStarted, resultSelector: { $1 ? nil : $0 }) // Pass when timer stopped
             .filterNil()
             .map({ timeToMinute($0) })
+            .withLatestFrom(connected)
+            .filter(invert)
             .distinctUntilChanged()
             .skip(1) // Skip first init
             .subscribe(onNext: { [weak self] _ in

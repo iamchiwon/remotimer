@@ -33,3 +33,5 @@ func sign(_ f: CGFloat) -> Int {
 }
 
 func bypass<T>(_ t: T) -> T { return t }
+
+func invert(_ b: Bool) -> Bool { return !b }

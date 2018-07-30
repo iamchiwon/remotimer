@@ -15,6 +15,14 @@ DEPENDENCIES:
   - SnapKit
   - Tibei
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxCocoa
+    - RxOptional
+    - RxSwift
+    - SnapKit
+    - Tibei
+
 SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
@@ -24,4 +32,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d90990f6a5d8291a517ca7fcc7531adb7d4415e4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
