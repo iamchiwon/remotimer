@@ -9,9 +9,20 @@
 import Foundation
 import UIKit
 
-func timeToString(_ time: TimeInterval) -> String {
+func timeToMinute(_ time: TimeInterval) -> Int {
     let minute = Int(time / 60)
+    return minute
+}
+
+func timeToSecond(_ time: TimeInterval) -> Int {
+    let minute = timeToMinute(time)
     let second = Int(time - Double(minute) * 60.0)
+    return second
+}
+
+func timeToString(_ time: TimeInterval) -> String {
+    let minute = timeToMinute(time)
+    let second = timeToSecond(time)
     return String(format: "%02d:%02d", minute, second)
 }
 

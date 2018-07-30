@@ -8,6 +8,7 @@ target 'Remotimer' do
   # Pods for Remotimer
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxOptional'
   pod 'Tibei'
   pod 'SnapKit'
 

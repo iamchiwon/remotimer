@@ -27,7 +27,7 @@ Remotimer is stopwatch application which controlled by remotly.
 
 ### Appstore
 
-[![Download](https://developer.apple.com/assets/elements/icons/download-on-the-app-store/download-on-the-app-store.svg)](https://itunes.apple.com/us/app/apple-store/id1414871964)
+[![Download](doc_res/128x128.png)](https://itunes.apple.com/us/app/apple-store/id1414871964)
 
 ### One more Thing
 
