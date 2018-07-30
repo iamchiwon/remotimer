@@ -21,13 +21,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REMOTIMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hit-lc-tLA">
-                                <rect key="frame" x="56" y="45" width="262" height="54"/>
+                                <rect key="frame" x="56.5" y="45" width="262" height="54"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-zd-zfg">
-                                <rect key="frame" x="52" y="557" width="270" height="50"/>
+                                <rect key="frame" x="52.5" y="557" width="270" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HA6-S0-D4T"/>
@@ -44,7 +44,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwY-j9-5Ox">
                                 <rect key="frame" x="16" y="129" width="343" height="332"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Remotimer is stopwatch application which controlled by remotly.
+                                <string key="text">Remotimer is stopwatch application which controlled by remotly.
 
 Under local network, same WiFi, controller and timer are connected each other automatically.
 
@@ -62,13 +62,13 @@ Without controller, not connected or disconnected, timer runs standalone mode. I
 
 ■ One more Thing
 This is opensource project : 
-https://github.com/iamchiwon/remotimer</mutableString>
+https://github.com/iamchiwon/remotimer</string>
                                 <color key="textColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-cG-fm6">
-                                <rect key="frame" x="52" y="491" width="270" height="50"/>
+                                <rect key="frame" x="52.5" y="491" width="270" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1ir-gD-xIv"/>
@@ -139,8 +139,8 @@ https://github.com/iamchiwon/remotimer</mutableString>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="yZ6-0v-hSN">
-                                <rect key="frame" x="32" y="214.5" width="311" height="239"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="200"/>
+                                <rect key="frame" x="32" y="95" width="311" height="477.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="400"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -181,7 +181,7 @@ https://github.com/iamchiwon/remotimer</mutableString>
                                         <rect key="frame" x="234" y="0.0" width="141" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAC-go-ReZ">
-                                                <rect key="frame" x="52.5" y="14.5" width="36" height="20.5"/>
+                                                <rect key="frame" x="53" y="14.5" width="36" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.27058823529999998" green="0.30196078430000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -346,10 +346,10 @@ https://github.com/iamchiwon/remotimer</mutableString>
                                 <rect key="frame" x="152" y="336" width="207" height="207"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VK-6v-Mrb">
-                                        <rect key="frame" x="50" y="50" width="107" height="107"/>
+                                        <rect key="frame" x="52" y="52" width="103.5" height="103.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-6H-dfw">
-                                                <rect key="frame" x="36" y="43.5" width="36" height="20.5"/>
+                                                <rect key="frame" x="34" y="41.5" width="36" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.61568627450000002" green="0.64705882349999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -357,18 +357,18 @@ https://github.com/iamchiwon/remotimer</mutableString>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.039215686274509803" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="FVx-6H-dfw" firstAttribute="centerX" secondItem="6VK-6v-Mrb" secondAttribute="centerX" id="G47-Y5-yHP"/>
-                                            <constraint firstItem="FVx-6H-dfw" firstAttribute="centerY" secondItem="6VK-6v-Mrb" secondAttribute="centerY" id="tI6-L6-ZWK"/>
+                                            <constraint firstItem="FVx-6H-dfw" firstAttribute="centerY" secondItem="6VK-6v-Mrb" secondAttribute="centerY" id="0fc-do-LXE"/>
+                                            <constraint firstItem="FVx-6H-dfw" firstAttribute="centerX" secondItem="6VK-6v-Mrb" secondAttribute="centerX" id="Vf9-eV-OeX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="top" secondItem="xx9-Wo-5xN" secondAttribute="top" constant="50" id="JGM-Ih-Qi0"/>
-                                    <constraint firstAttribute="bottom" secondItem="6VK-6v-Mrb" secondAttribute="bottom" constant="50" id="cHb-O7-S8S"/>
-                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="leading" secondItem="xx9-Wo-5xN" secondAttribute="leading" constant="50" id="fCM-FJ-u8O"/>
+                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="height" secondItem="xx9-Wo-5xN" secondAttribute="height" multiplier="0.5" id="2ri-SE-8a7"/>
+                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="width" secondItem="xx9-Wo-5xN" secondAttribute="width" multiplier="0.5" id="EWJ-d7-ND5"/>
                                     <constraint firstAttribute="width" secondItem="xx9-Wo-5xN" secondAttribute="height" multiplier="1:1" id="jji-jm-Ea7"/>
-                                    <constraint firstAttribute="trailing" secondItem="6VK-6v-Mrb" secondAttribute="trailing" constant="50" id="uho-oA-88t"/>
+                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="centerY" secondItem="xx9-Wo-5xN" secondAttribute="centerY" id="mSp-o5-8Wy"/>
+                                    <constraint firstItem="6VK-6v-Mrb" firstAttribute="centerX" secondItem="xx9-Wo-5xN" secondAttribute="centerX" id="vgs-gZ-LRt"/>
                                 </constraints>
                             </view>
                         </subviews>
